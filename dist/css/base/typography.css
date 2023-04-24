@@ -1,0 +1,103 @@
+/*color letras nav-bar*/
+.top-nav-link{
+    display: block;
+    color: white;
+    text-decoration: none;
+    /*transition: 0.3s;*/
+}
+/*------------------------------------*/
+
+/*color letras nav-bar*/
+.top-nav-link:hover{
+    opacity: 100%;
+    color: #D44F1E;
+}
+/*------------------------------------*/
+
+/* color de texto */
+.color-green{
+    color: #386641;  
+}
+
+.color-w{
+    color: #ffffff;  
+}
+
+.title-margin{
+    margin-top: 4rem;
+}
+/*------------------------------------*/
+
+/* usado para cards */
+.br-use{
+    margin-top: 30px;  
+}
+
+.br-use-2{
+    margin-top: 38px;  
+}
+/*------------------------------------*/
+
+.space-margin{
+    margin-top: 1rem;
+}
+
+.align-text{
+    text-align: center;
+}
+
+.text-likes{
+    position: relative;
+    right: -13px;
+    top: 12px;
+}
+/*------------------------------------*/
+
+.social-media-link{
+    text-align: center;
+}
+
+.legal-text{
+    text-align:center;
+    
+}
+
+.center-information{
+    text-align: center;
+    display: inline-block;
+}
+
+.red-margin{
+    margin-right: 13px;
+}
+
+.contacts-title{
+    text-align: center;
+    /*margin: 40px;*/
+    margin-top: 2rem;
+}
+
+.giant-info{
+    font-size: 1.3rem; 
+    color: #386641; 
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    .br-mobile {
+        margin-top: 38px;  
+    }
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+

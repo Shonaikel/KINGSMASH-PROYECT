@@ -1,0 +1,120 @@
+.mobile-bar, .mobile-icon, .offcanvas-header{
+    display: none;
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    .navbar-nav{
+        padding: var(--fs-mdl);
+        text-align: center;
+    }
+    .mobile-bar{
+        display: block;
+        width: 100%;
+        background: #386641;
+    }
+    
+    .mobile-icon{
+        display: block;
+        width: 5%;
+        position: relative;
+        right: 0;
+    }
+
+    .offcanvas-header{
+        display: block;
+    }
+
+    .btn-close{
+        color: var(--clr-white);
+    }
+
+    .mobile-offcanvas{
+        display: block;
+        position: fixed;
+        top: 0;
+        left:0;
+        width:80%;
+        height: 100%;
+        margin-top: 0 !important;
+        visibility: hidden;
+        border-radius:0;
+        background:  #A7C957;
+        z-index: 1200; 
+        overflow-y: scroll;
+        overflow-x: hidden;
+        transform:translateX(-100%);
+        transition: visibility .3s ease-in-out, transform .3s ease-in-out;
+    }
+
+    .show-nav{
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .nav-front{
+        position: relative;
+        z-index: 5;
+        background: #A7C957;
+    }
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    .mobile-bar{
+        z-index: 10;
+    }
+    .mobile-link{
+        text-decoration: none;
+        color: #fff;
+    }
+    .text-decorate{
+        font-size: 2rem;  
+    }
+    .cont-text{
+        background:#54855e;
+        height: 2.5rem;
+        text-align: center;
+    }
+    .text-mid{
+        text-align: center;
+        font-size: 1.30rem;
+    }
+    .mobile-logo{
+        height: 21rem;
+    }
+    
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    .mobile-bar{
+        z-index: 10;
+    }
+    .mobile-link{
+        text-decoration: none;
+        color: #fff;
+    }
+    .text-decorate{
+        font-size: 2rem;  
+    }
+    .cont-text{
+        background:#54855e;
+        height: 2.8rem;
+        text-align: center;
+    }
+    .text-mid{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .mobile-logo{
+        height: 10rem;
+    }
+}
+
+
+
+
+
