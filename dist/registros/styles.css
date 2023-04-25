@@ -80,6 +80,9 @@ body {
   color: rgb(236, 23, 73);
 }
 
+.fondo{
+  background-image: "./img/fondo.jpg";
+}
 .submitBtn {
   display: block;
   margin-left: auto;
