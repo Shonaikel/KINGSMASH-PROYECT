@@ -1,3 +1,10 @@
+.header{
+    width: 100% !important;
+    height: 200px !important;
+    position: relative;
+}
+
+
 .mobile-bar, .mobile-icon, .offcanvas-header{
     display: none;
 }
@@ -10,7 +17,7 @@
     .mobile-bar{
         display: block;
         width: 100%;
-        background: #386641;
+        background: rgb(236, 23, 73);
     }
     
     .mobile-icon{
@@ -38,7 +45,7 @@
         margin-top: 0 !important;
         visibility: hidden;
         border-radius:0;
-        background:  #A7C957;
+        background: rgb(236, 23, 73);
         z-index: 1200; 
         overflow-y: scroll;
         overflow-x: hidden;
@@ -54,7 +61,7 @@
     .nav-front{
         position: relative;
         z-index: 5;
-        background: #A7C957;
+        background: #fff;
     }
 }
 /* Medium devices (tablets, less than 992px) */
@@ -70,7 +77,7 @@
         font-size: 2rem;  
     }
     .cont-text{
-        background:#54855e;
+        background:#fff;
         height: 2.5rem;
         text-align: center;
     }

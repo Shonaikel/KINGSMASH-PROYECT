@@ -1,9 +1,6 @@
 const app= Vue.createApp({
     data(){
         return{
-            title:"Kitchen genius",
-            description:"A Recipe Collection For Every Palate",
-            image:"./images/header.jpg",
             likes: 15,
             categories:[
                 {id: 1, name: "All"},

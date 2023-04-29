@@ -19,7 +19,7 @@ body{
 
 /* layout */
 .container-nav{
-    width: 1366x;
+    width: 1366px;
     margin:auto;
 }
 
@@ -50,14 +50,14 @@ body{
     
     font-weight: var(--fw-med);
     font-size: var(--fs-rg);
-    background:#A7C957;
+    background:rgb(236, 23, 73);
 }
 
 .top-nav-v2{
     
     font-weight: var(--fw-med);
     font-size: var(--fs-rg);
-    background:#386641;
+    background:rgb(236, 23, 73);
 }
 
 /*redondo del buscador*/
@@ -125,7 +125,7 @@ body{
 }
 
 .color-light{
-    background:#A7C957;
+    background:rgb(236, 23, 73);
 }
 
 .line {
@@ -189,41 +189,8 @@ body{
     margin-top: 2rem;
 }
 
-.opacity-card{
-    color: #A7C957;
-    opacity: 1;
-}
 
-.opacity-card:hover{
-    color: #A7C957;
-   opacity: 0.5;
-}
 
-.text-size{
-    font-size: 20px;
-}
-
-.format{
-    border-radius: 5rem;
-    background-color: #D44F1E;
-    border: #A7C957 ;
-    width: 13rem;
-    border-radius: 50px 50px 50px 50px;
-  }
-
-  .boton{
-    background-color:#D44F1E;
-    border: #A7C957;
-  }
-  .boton:hover{
-    opacity: 0.70;
-    -moz-opacity: .50;
-    filter:alpha (opacity=50);
-  } 
-
-  .border-square{
-    border-radius: 100rem;
-  }
 
 
 

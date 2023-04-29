@@ -10,15 +10,11 @@
 /*color letras nav-bar*/
 .top-nav-link:hover{
     opacity: 100%;
-    color: #D44F1E;
+    color: #000000; 
 }
 /*------------------------------------*/
 
 /* color de texto */
-.color-green{
-    color: #386641;  
-}
-
 .color-w{
     color: #ffffff;  
 }
@@ -26,16 +22,8 @@
 .title-margin{
     margin-top: 4rem;
 }
-/*------------------------------------*/
 
-/* usado para cards */
-.br-use{
-    margin-top: 30px;  
-}
 
-.br-use-2{
-    margin-top: 38px;  
-}
 /*------------------------------------*/
 
 .space-margin{
