@@ -18,6 +18,9 @@
 .color-w{
     color: #ffffff;  
 }
+.color-r{
+    color: rgb(236, 23, 73);
+}
 
 .title-margin{
     margin-top: 4rem;

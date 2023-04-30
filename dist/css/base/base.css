@@ -11,6 +11,23 @@ body{
     background: #F8F8F8;
 }
 
+
+/* TAMAÑO LIKES Y DISLIKES TOP 10 */
+.like-size{
+    width: 30px;
+    height:30px;
+}
+
+.btn-size{
+    
+}
+
+
+
+
+
+
+
 /* layout */
 .container{
     width: 1140px;
