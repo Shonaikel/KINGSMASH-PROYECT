@@ -18,8 +18,10 @@ body{
     height:30px;
 }
 
-.btn-size{
-    
+.user-size{
+    height: 4rem;
+    width: 4rem;
+    margin-top:8px;   
 }
 
 
@@ -150,11 +152,7 @@ body{
     border-radius: 5px;
   }
 
-.icon-size{
-    height: 2.5rem;
-    width: 2.5rem;
-    margin-top:8px;   
-}
+
 
 .elements-l{
     display: inline;
