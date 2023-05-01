@@ -24,7 +24,11 @@ body{
     margin-top:8px;   
 }
 
-
+.img-recipe{
+    height: 25rem;
+    width: 25rem;
+    display: flex;
+}
 
 
 
