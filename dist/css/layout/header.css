@@ -4,6 +4,44 @@
     position: relative;
 }
 
+/* PANEL ROJO */
+.top-nav{
+    
+    font-weight: var(--fw-med);
+    font-size: var(--fs-rg);
+    background:rgb(236, 23, 73);
+}
+
+/* REDONDO DEL BUSCADOR */
+.search-nav{
+    border-radius: 8rem; 
+    width: 35rem;
+}
+
+/* OCULTAR PUNTOS */
+.top-nav-item{
+    list-style-type: none;
+}
+.invisible-point{
+    list-style-type: none;
+}
+
+/* TAMAÑO DEL LOGO - COLOR DEL NAVBAR - TAMAÑO IMG USUARIO*/
+.size{
+    height: 115px;
+    font-weight: 115px;
+}
+.color-light{
+    background:rgb(236, 23, 73);
+}
+.user-size{
+    height: 4rem;
+    width: 4rem;
+    margin-top:8px;   
+}
+
+
+
 
 .mobile-bar, .mobile-icon, .offcanvas-header{
     display: none;
@@ -87,8 +125,7 @@
     }
     .mobile-logo{
         height: 21rem;
-    }
-    
+    } 
 }
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {

@@ -1,20 +1,17 @@
-/*color letras nav-bar*/
+/* COLOR TEXTO NAVBAR */
 .top-nav-link{
     display: block;
     color: white;
     text-decoration: none;
-    /*transition: 0.3s;*/
 }
-/*------------------------------------*/
 
-/*color letras nav-bar*/
+/* COLOR TEXTO NAVBAR TRANSICIÓN */
 .top-nav-link:hover{
     opacity: 100%;
     color: #000000; 
 }
-/*------------------------------------*/
 
-/* color de texto */
+/* COLOR TEXTO - TAMAÑO Y MARGEN DE TEXTO */
 .color-w{
     color: #ffffff;  
 }
@@ -25,7 +22,6 @@
 .title-margin{
     margin-top: 4rem;
 }
-
 .giant-info{
     font-size: 1.2rem; 
 }
@@ -34,8 +30,7 @@
 
 
 
-/*------------------------------------*/
-
+/*--------------------------------------------------------------------*/
 .space-margin{
     margin-top: 1rem;
 }
@@ -43,38 +38,19 @@
 .align-text{
     text-align: center;
 }
-
-.text-likes{
-    position: relative;
-    right: -13px;
-    top: 12px;
-}
-/*------------------------------------*/
-
+/*-------------------------------------------------------------------*/
 .social-media-link{
     text-align: center;
 }
 
 .legal-text{
-    text-align:center;
-    
+    text-align:center;   
 }
 
 .center-information{
     text-align: center;
     display: inline-block;
 }
-
-.red-margin{
-    margin-right: 13px;
-}
-
-.contacts-title{
-    text-align: center;
-    /*margin: 40px;*/
-    margin-top: 2rem;
-}
-
 
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
