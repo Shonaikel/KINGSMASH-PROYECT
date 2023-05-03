@@ -7,7 +7,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
     <!-- Google Font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <!-- AOS animation -->
@@ -40,7 +40,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="top-nav-item">
-                        <a class="nav-link top-nav-link top-nav-item" aria-current="page" href="../dist/index.html">INICIO</a>
+                        <a class="nav-link top-nav-link top-nav-item" aria-current="page" href="../dist/usuario/perfil.html">INICIO</a>
                       </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIA</a>
@@ -102,21 +102,7 @@
 <!-- CONTAINER-->
 <section id="app" class="container-nav">
 
-  <!--BOTONES-->
-    <div class="ps-5">
-      <nav class="navbar navbar-expand-lg ">
-          <div class="container-fluid">
-              <div class="collapse navbar-collapse">
-                  <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
-                    <li v-for="(category, index) in categories" class="nav-item me-3">
-                      <button class="btn btn-danger me-2 " v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
-                    </li>
-                  </ul>
-              </div> 
-          </div>
-      </nav>
-    </div>
-  <!--BOTONES-->
+  
 
   <!-- TOP 10 RECETAS -->
     <section>
@@ -146,6 +132,21 @@
     </section>
   <!-- TOP 10 RECETAS -->
 
+  <!--BOTONES-->
+          <div class="ps-5">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
+                          <li v-for="(category, index) in categories" class="nav-item me-3">
+                            <button class="btn btn-danger me-2 " v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
+                          </li>
+                        </ul>
+                    </div> 
+                </div>
+            </nav>
+          </div>
+  <!--BOTONES-->
   <!-- RECETAS -->
         <section>
           <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
