@@ -25,4 +25,5 @@
     /* colors */
     /*  h -> hue/color 0/360, s -> saturation 0/100, l -> lightness 0/100, a -> alpha 0/1 */
     --clr-white: hsl(0, 0%, 100%);
+    
 }

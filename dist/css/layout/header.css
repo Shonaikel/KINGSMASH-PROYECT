@@ -78,7 +78,7 @@
         position: fixed;
         top: 0;
         left:0;
-        width:80%;
+        width:90%;
         height: 100%;
         margin-top: 0 !important;
         visibility: hidden;
@@ -124,7 +124,7 @@
         font-size: 1.30rem;
     }
     .mobile-logo{
-        height: 21rem;
+        height: 45rem;
     } 
 }
 /* Small devices (landscape phones, less than 768px) */
@@ -145,7 +145,7 @@
         font-size: 2rem;  
     }
     .cont-text{
-        background:#54855e;
+        background:rgb(153, 4, 39);
         height: 2.8rem;
         text-align: center;
     }

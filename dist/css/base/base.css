@@ -11,24 +11,12 @@ body{
     background: #F8F8F8;
 }
 
-/* TAMAÑO LIKES Y DISLIKES TOP 10 */
-.like-size{
-    width: 30px;
-    height:30px;
-}
-
 /* TAMAÑO IMG RECETA DEL RECETARIO */
 .img-recipe{
     height: 25rem;
     width: 25rem;
     display: flex;
 }
-
-/* ES USADO PARA LOS CARD */
-.elements-l{
-    display: inline;
-    display: flex;
-  }
 
 /* CONTENEDOR TAMAÑO */
 .container{
@@ -46,14 +34,6 @@ body{
     flex-wrap: wrap;
 }
 
-/* CONFIGURACIONES DE CARDS */
-.card-size{
-    width: 80%;
-}
-.card-size-top-10{
-    width: 101%;
-}
-
 /* PONER INFORMACIÓN EN LA MISMA FILA */
 .filep {
     display: inline-block;
@@ -66,15 +46,6 @@ body{
 }
 
 
-
-/*------------------------------------*/
-/* gap - space between items */
-.gap-1{ gap: calc(var(--fs-xsm) * var(--spacer-xsm)); }
-.gap-2{ gap: calc(var(--fs-xsm) * var(--spacer-sm)); }
-.gap-3{ gap: calc(var(--fs-xsm) * var(--spacer-md)); }
-.gap-4{ gap: calc(var(--fs-xsm) * var(--spacer-lg)); }
-.gap-5{ gap: calc(var(--fs-xsm) * var(--spacer-xlg)); }
-
 /* margin properties */
 .m-auto{
     margin-right: auto;
@@ -85,22 +56,7 @@ body{
     margin-left: 100rem;
   }
 
-.main-title{
-    font-size: var(--fs-mdl);
-}
-
-.spacing{
-    word-spacing:(me-auto, mb-2, mb-lg-0, me-2);
-}
-
-  .carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 28rem;
-    overflow: hidden;
-}
-
-.total-size{
+  .total-size{
     height: 6rem;
 }
 
@@ -118,6 +74,21 @@ body{
     margin: revert;
 }
 
+
+/* gap - space between items */
+.gap-1{ gap: calc(var(--fs-xsm) * var(--spacer-xsm)); }
+.gap-2{ gap: calc(var(--fs-xsm) * var(--spacer-sm)); }
+.gap-3{ gap: calc(var(--fs-xsm) * var(--spacer-md)); }
+.gap-4{ gap: calc(var(--fs-xsm) * var(--spacer-lg)); }
+.gap-5{ gap: calc(var(--fs-xsm) * var(--spacer-xlg)); }
+
+.main-title{
+    font-size: var(--fs-mdl);
+}
+
+.spacing{
+    word-spacing:(me-auto, mb-2, mb-lg-0, me-2);
+}
 
 
 /* Large devices (desktops, less than 1200px) */

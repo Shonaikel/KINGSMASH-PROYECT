@@ -36,19 +36,6 @@
     text-align: center;
 }
 
-/*-------------------------------------------------------------------*/
-.social-media-link{
-    text-align: center;
-}
-
-.legal-text{
-    text-align:center;   
-}
-
-.center-information{
-    text-align: center;
-    display: inline-block;
-}
 
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {

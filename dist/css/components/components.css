@@ -1,3 +1,32 @@
+/* CONFIGURACIONES DE CARDS */
+.card-size{
+    width: 80%;
+}
+.card-size-top-10{
+    width: 101%;
+}
+
+/* ES USADO PARA LOS CARD */
+.elements-l{
+    display: inline;
+    display: flex;
+  }
+
+/* TAMAÑO LIKES Y DISLIKES TOP 10 */
+.like-size{
+    width: 30px;
+    height:30px;
+}
+
+/* CONFIGURACION CARROUSEL */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 28rem;
+    overflow: hidden;
+}
+
+/* CONFIGURACION PERFIL */
 .perfil-usuario {
     background: linear-gradient(rgb(232, 232, 232), transparent);
     color: #333;
@@ -110,6 +139,8 @@
     display: none;
     margin-right: .75rem;
 }
+
+
 @media (max-width: 780px) {
     .contenedor-perfil {
         width: 100%;
@@ -124,37 +155,11 @@
         padding: 15px;
         text-align: center;
     }
-    .bio-usuario {
-        font-size: 1em;
-        overflow:hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
     .titulo-usuario {
         font-size: 2.1rem;
     }
     .portada-perfil {
         height: 28rem;
-    }
-    .menu-perfil ul {
-        flex-direction: column;
-    }
-    .lista-perfil {
-        display: block;
-    }
-    .menu-perfil {
-        margin-top: 2rem;
-    }
-    .menu-perfil ul {
-        display: flex;
-        list-style: none;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 2.5rem;
-        width: 70%;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 0 12px 2px rgba(0, 0, 0, .1);
     }
     .icono-perfil {
         display: inline-block;
