@@ -109,10 +109,6 @@ body{
     margin: 1px;
 }
 
-.top-contact{
-    margin-top: 2.8rem;
-}
-
 .img-container {
     text-align: center;
     display: block;
@@ -121,7 +117,6 @@ body{
 .margin-text{
     margin: revert;
 }
-
 
 
 

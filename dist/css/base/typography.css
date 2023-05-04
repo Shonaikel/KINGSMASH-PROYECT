@@ -26,18 +26,16 @@
     font-size: 1.2rem; 
 }
 
-
-
-
-
-/*--------------------------------------------------------------------*/
+/* ESPACIO ENTRE TEXTO Y OBJETO DE ARRIBA */
 .space-margin{
-    margin-top: 1rem;
+    margin-top: 7rem;
 }
 
+/* PONE EL TEXTO EN EL CENTRO */
 .align-text{
     text-align: center;
 }
+
 /*-------------------------------------------------------------------*/
 .social-media-link{
     text-align: center;
