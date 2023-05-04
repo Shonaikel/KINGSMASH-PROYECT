@@ -1,105 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 <!-- Google Font -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 <!-- AOS animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <!-- boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-<!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <!-- JavaScript -->
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <link rel="stylesheet" href="./css/main.css">
-<title>Recetario</title>
+<title>Kingsmash</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="position-absolute top-0 start-0 pt-3 pb-3 ps-3 mobile-bar position-tab">
-            <img class="mobile-icon" src="./images/icons/bars.svg" alt="menu bar">
-        </div>
-  <!--  Menu navigation -->
-  <nav id="navbar-main" class="navbar top-nav mobile-offcanvas navbar-expand-lg mx-auto color-light total-size">
-        <div class="d-flex justify-content-between align-items-center ">
-            <a href="../dist/index.html"><img src="./images/imgs/Logo.png" class="size position-relative ms-5 mobile-logo" alt="Graphic identifier"></a>
-            <div class="offcanvas-header"><button id="btn-close" class="btn btn-light float-end me-5">X</button></div>
-        </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="top-nav-item"><a class="nav-link top-nav-link top-nav-item" aria-current="page" href="../dist/registros/registro.html">INICIO</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIA</a>
-              <ul class="dropdown-menu ">
-                  <li><a class="dropdown-item" href="../secciones/Index.html">DESAYUNO</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">ENTRADAS</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">ALMUERZO</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">SOPAS</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">POSTRES</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">BEBIDAS</a></li>
-              </ul>
-          </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">DIFICULTAD</a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../secciones/Index.html">FACIL</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">INTERMEDIA</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">AVANZADO</a></li>
-              </ul>
-          </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">OCACIONES</a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../secciones/Index.html">TODAS</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">CUMPLEAÑOS</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">DIA DE LA MADRE</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">DIA DEL PADRE</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">DIA DEL NIÑO</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">NAVIDAD</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">SEMANA SANTA</a></li>
-                  <li><a class="dropdown-item" href="../secciones/Index.html">VERANO</a></li>
-              </ul>
-          </li>
-      </ul>
-          <form class="d-flex search-nav ps-5 pe-5 ">
-              <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
-              <a href="#"><img src="images/icons/lupa.png" alt="Lupa"></a>
-          </form>
-          <form class=""></form>
-              <a href="../dist/registros/registro.html" class=""><img class="user-size " src="./images/icons/usuariofoto.jpg" alt="facebook"></a>
-          </form>
-    </div>
-  </nav>
-</header>
-<!-- HEADER -->
+  <!-- HEADER -->
+        <header>
+              <div class="position-absolute top-0 start-0 pt-3 pb-3 ps-3 mobile-bar position-tab">
+                <img class="mobile-icon" src="./images/icons/bars.svg" alt="menu bar">
+              </div>
+          <nav id="navbar-main" class="navbar top-nav mobile-offcanvas navbar-expand-lg mx-auto color-light total-size">
+                                      
+                <div class="d-flex justify-content-between align-items-center"><!-- classes no necesarias -->
+                    <a href="../dist/index.html"><img src="./images/imgs/Logo.png" class="ms-5 size position-relative  mobile-logo" alt="Graphic identifier"></a>
+                    <div class="offcanvas-header"><button id="btn-close" class="btn btn-light float-end me-5">X</button></div>
+                </div>
+                     
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="top-nav-item"><a class="nav-link top-nav-link top-nav-item" aria-current="page" href="../dist/usuario/perfil.html">INICIO</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIA</a>
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" href="">DESAYUNO</a></li>
+                            <li><a class="dropdown-item" href="">ENTRADAS</a></li>
+                            <li><a class="dropdown-item" href="">ALMUERZO</a></li>
+                            <li><a class="dropdown-item" href="">SOPAS</a></li>
+                            <li><a class="dropdown-item" href="">POSTRES</a></li>
+                            <li><a class="dropdown-item" href="">BEBIDAS</a></li>
+                        </ul>
+                    </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">DIFICULTAD</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="">FACIL</a></li>
+                          <li><a class="dropdown-item" href="">INTERMEDIA</a></li>
+                          <li><a class="dropdown-item" href="">AVANZADO</a></li>
+                      </ul>
+                  </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">OCACIONES</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="">TODAS</a></li>
+                            <li><a class="dropdown-item" href="">CUMPLEAÑOS</a></li>
+                            <li><a class="dropdown-item" href="">DIA DE LA MADRE</a></li>
+                            <li><a class="dropdown-item" href="">DIA DEL PADRE</a></li>
+                            <li><a class="dropdown-item" href="">DIA DEL NIÑO</a></li>
+                            <li><a class="dropdown-item" href="">NAVIDAD</a></li>
+                            <li><a class="dropdown-item" href="">SEMANA SANTA</a></li>
+                            <li><a class="dropdown-item" href="">VERANO</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                  <form class="d-flex search-nav ps-5 pe-5 ">
+                      <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
+                      <a href="#"><img src="images/icons/lupa.png" alt="Lupa"></a>
+                  </form>
+              </div>
+          </nav>
+        </header>
+  <!-- HEADER -->
 
 <!-- CONTAINER-->
-<section id="app" class="container-nav">
+<section id="app" class="">
 
-<!-- INFORMACION RECETA -->
+    <!-- INFORMACION RECETA -->
         <section>
             <div class="container-fluid">
-                <div class="h4"><h1 class="title-margin "></h1></div>
+                <div class="h4"><h1 class="title-margin ps-5 pe-5 ">BIG-MAC: </h1></div>
 
                 <div class="row g-1 ps-5 pe-5 ">
                     <div class="col-md">
-                        <div class="card card-size">
-                                <a href=""><img class="card-img-top img-recipe " alt="RECETA" src="images/recipes/big-mac.jpg"></a>
+                        <div class="card card-size p-3">
+                                <a href=""><img class="card-img-top rounded " alt="RECETA" src="images/recipes/big-mac.jpg"></a>
                             <div class="card-body">
-                                <h3 class="card-title">BIG-MAC</h3>
-                                <p class="mt-2 mb-1 color-r fs-5 ">Comida rápida</p>
-                                <p class="card-title">15 min</p>
-                                <p class="card-title">medio</p>
-                                <p class="mt-2 text-recipe-info fs-6">1234</p>
+                                <h3 class="card-title color-r">Comida rápida</h3>
+                                <p class="giant-info filep">15 min</p>
+                                <p class="giant-info filep">medio</p>
+                                <p class="giant-info filep">1234</p>
                             </div>
                         </div>
                     </div>
@@ -113,44 +109,41 @@
                                 Los restos de harina que quedan en la sartén espesarán un poco la salsa. Por último añadimos el salmón y damos un hervor corto a fuego suave, regando la superficie con la salsa. 
                                 Retiramos del fuego y servimos inmediatamente, acompañando el salmón de un poco de salsa.</p>
                             <div class="h6"><h2 class="color-r">INGREDIENTES:</h2></div>
-                                <p class="giant-info">Salmón fresco rodaja 2, Harina de trigo 75 g, Aceite de oliva virgen extra 100 ml </p>
+                                <p class="giant-info">Salmón fresco rodaja 2, Harina de trigo 75 g, Aceite de oliva virgen extra 100 ml, Salmón fresco rodaja 2, Harina de trigo 75 g, Aceite de oliva virgen extra 100 ml,
+                                  Salmón fresco rodaja 2, Harina de trigo 75 g, Aceite de oliva virgen extra 100 ml, Salmón fresco rodaja 2, Harina de trigo 75 g, Aceite de oliva virgen extra 100 ml </p>
                             </div>
                         </div>
-                    </div> 
-                    <div class="modal-footer ">
+                    </div>
+
+                    <div class="modal-footer center-objetive">
                         <div v-if="recipes.length>1">
-                            <button type="button" class="btn btn-dark me-3 navbar-expand-lg " v-on:click="onClickPrev()">Prev</button>
-                            <button type="button" class="btn btn-dark me-3 navbar-expand-lg " v-on:click="onClickNext()">Next</button>
+                            <button type="button" class="btn btn-dark me-3 navbar-expand-lg btn-lg" v-on:click="onClickPrev()">Prev</button>
+                            <button type="button" class="btn btn-dark me-3 navbar-expand-lg btn-lg" v-on:click="onClickNext()">Next</button>
                         </div> 
-                        <button type="button" class="btn btn-secondary me-3 navbar-expand-lg " data-bs-dismiss="modal">Close</button>
-                    </div>   
+                        <button type="button" class="btn btn-secondary me-3 navbar-expand-lg btn-lg" data-bs-dismiss="modal">Close</button>
+                    </div>
+
                 </div>
         </section>  
-<!-- INFORMACION RECETA -->
+    <!-- INFORMACION RECETA -->
+    
+</section>
+<!-- CONTAINER-->
   
-
-<!-- PREV AND NEXT -->
-        <section>
-    
-        </section>
-<!-- PREV AND NEXT -->
-    </section>
-
 <!-- FOOTER-->
-  <footer class="row text-center footer-nav mt-5 top-nav container-fluid  ">
-    <ul class="nav justify-content-center mt-4">
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link active footer-info fs-4" aria-current="page" href="#">CONTACTANOS</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">TERMINOS & CONDICIONES</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">POLITICA DE PRIVACIDAD</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">DECLARACION DE ACCESIBILIDAD</a></li>
-    </ul>
-    <p class="mb-0 footer-terms color-w">Kingsmash y su logo son marcas registradas.</p>
-    <p class="footer-terms mb-3 color-w">© 2023 Kingsmash.</p>
-  </footer>
+<footer class="row text-center footer-nav mt-5 top-nav container-fluid  ">
+  <ul class="nav justify-content-center mt-4">
+    <li class="nav-item "><a class="footer-text contact-text color-w nav-link active footer-info fs-4" aria-current="page" href="#">CONTACTANOS</a></li>
+    <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">TERMINOS & CONDICIONES</a></li>
+    <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">POLITICA DE PRIVACIDAD</a></li>
+    <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">DECLARACION DE ACCESIBILIDAD</a></li>
+  </ul>
+  <p class="mb-0 footer-terms color-w">Kingsmash y su logo son marcas registradas.</p>
+  <p class="footer-terms mb-3 color-w">© 2023 Kingsmash.</p>
+</footer>
 <!-- FOOTER-->
 
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 <script src="./js/main.js"></script>
 <script>
@@ -174,6 +167,6 @@
         });
     });
   </script>
-<!-- AOS Animation -->         
+<!-- AOS Animation -->
 </body>
 </html>

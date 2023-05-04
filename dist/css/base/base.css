@@ -48,10 +48,21 @@ body{
 
 /* CONFIGURACIONES DE CARDS */
 .card-size{
-    width: 93%;
+    width: 80%;
 }
 .card-size-top-10{
     width: 101%;
+}
+
+/* PONER INFORMACIÓN EN LA MISMA FILA */
+.filep {
+    display: inline-block;
+    width: 30%;
+}
+
+.center-objetive{
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 
