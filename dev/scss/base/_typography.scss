@@ -1,0 +1,54 @@
+@use '../abstracts/vars';
+
+/* COLOR TEXTO NAVBAR */
+.top-nav-link{
+    display: block;
+    color: $clr-white;
+    text-decoration: none;
+}
+/* COLOR TEXTO NAVBAR TRANSICIÓN */
+.top-nav-link:hover{
+    opacity: 100%;
+    color: $clr-black; 
+}
+/* COLOR TEXTO - TAMAÑO Y MARGEN DE TEXTO */
+.color-w{
+    color: $clr-white;  
+}
+.color-r{
+    color: $clr-red;
+}
+.title-margin{
+    margin-top: 4rem;
+}
+.giant-info{
+    font-size: $fs-rg; 
+}
+/* ESPACIO ENTRE TEXTO Y OBJETO DE ARRIBA */
+.space-margin{
+    margin-top: 7rem;
+}
+/* PONE EL TEXTO EN EL CENTRO */
+.align-text{
+    text-align: center;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    .br-mobile {
+        margin-top: 38px;  
+    }
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+

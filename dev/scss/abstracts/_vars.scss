@@ -1,0 +1,35 @@
+:root{
+    /* custom properties - constants */
+    $base-fs: 15px;
+    $spacer-xsm: 0.25;
+    $spacer-sm: 0.5;
+    $spacer-md: 1;
+    $spacer-lg: 1.5;
+    $spacer-xlg: 3;
+    /* font & weight */
+    $ff-primary: 'DM Sans';
+    $fw-reg: 400;
+    $fw-med: 500;
+    $fw-bold: 700;
+    $fw-xbold: 900;
+    /* 16 18 20 24 64 80 */
+    /* font sizes */
+    $fs-xsm: 1rem;
+    $fs-sm: 1.125rem;
+    $fs-rg: 1.25rem;
+    $fs-md: 1.5rem;
+    $fs-mdl: 2.125rem;
+    $fs-mdxl: 3rem;
+    $fs-lg: 4rem;
+    $fs-xlg: 5rem;
+    /* colors */
+    /*  h -> hue/color 0/360, s -> saturation 0/100, l -> lightness 0/100, a -> alpha 0/1 */
+    $clr-white: hsl(0, 0%, 100%);
+    $clr-red: rgb(236, 23, 73);
+    $clr-red-shadow: rgb(153, 4, 39);
+    $clr-dark: hsl(200, 19%, 18%);
+    $clr-gray: rgb(232, 232, 232);
+    $clr-blue-gray: #D9DCF1;
+    $clr-dark-gray: rgb(146, 146, 146);
+    $clr-black: rgba(0, 0, 0, .2);
+}
