@@ -140,13 +140,13 @@
   <!-- CARRUSEL -->
 
 <!-- CONTAINER-->
-<section id="app" class="">
+<section id="app" class="container">
 
   <!-- TOP 10 RECETAS -->
     <section>
       <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS MÁS VOTADAS</h2></div>
       
-      <div class="row row-cols-md-5 row-cols-1 g-4 ps-5 pe-5 card-size-top-10">
+      <div class="row row-cols-md-5 row-cols-1 g-4 ps-5 pe-4 card-size-top-10">
         <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col-md">
             <div class="card p-3">
                   <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="card-img-top rounded" alt="TOP 10"></a>
@@ -189,12 +189,12 @@
         <section>
           <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
             
-          <section class="row row-cols-md-2 g-4 ps-5 pe-5 card-size-top-10">   
+          <section class="row row-cols-md-2 g-4 ps-5 pe-4 card-size-top-10">   
             <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col-sm">
                 <div class="card mb-3">
-                    <div class="row g-0">
+                    <div class="row g-0 m-2">
                           <div class="col-md-4">
-                            <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="img-fluid rounded m-2" alt="featured recipe"></a>
+                            <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="img-fluid rounded " alt="featured recipe"></a>
                           </div>
                       <div class="col-md-8">
                           <div class="card-body pt-0">

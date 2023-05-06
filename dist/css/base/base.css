@@ -20,7 +20,7 @@ body{
 
 /* CONTENEDOR TAMAÑO */
 .container{
-    width: 1140px;
+    width: auto;
     margin:auto;
 }
 .container-nav{
