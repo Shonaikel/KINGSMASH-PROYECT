@@ -4,6 +4,7 @@
 @use '../scss/base/typhography';
 @use '../scss/abstracts/mixins';
 @use '../media-queries';
+
 /* CONFIGURACIONES DE CARDS */
 .card-size{
     width: 80%;
@@ -12,18 +13,21 @@
 .card-size-top-10{
     width: 101%;
 
-    /* ES USADO PARA LOS CARD */
-    .elements-l{
-        display: inline;
-        display: flex;
-    }
-    /* TAMAÑO LIKES Y DISLIKES TOP 10 */
-    .like-size{
-        width: 30px;
-        height:30px;
-    }
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 103%;
+    } 
 }
 
+ /* ES USADO PARA LOS CARD */
+.elements-l{
+    display: inline;
+    display: flex;
+}
+/* TAMAÑO LIKES Y DISLIKES TOP 10 */
+.like-size{
+    width: 30px;
+    height:30px;
+}
 /* CONFIGURACION CARROUSEL */
 .carousel-inner {
     position: relative;
@@ -57,6 +61,10 @@
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        width: 100%;    
+    }
 }
 
 .portada-perfil {
@@ -67,7 +75,12 @@
     position: relative;
     height: 20rem;
     margin-bottom: .5rem;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        height: 28rem;
+    }
 }
+
 .avatar-perfil {
     display: block;
     width: 230px;
@@ -80,7 +93,17 @@
     overflow: hidden;
     border: 8px solid $clr-white;
     box-shadow: 0 0 12px 2px  $clr-black;
+
+    .avatar-perfil:hover .cambiar-foto {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    @include media-queries.respond-to(media-queries.$phone){
+        left: calc(50% - 115px)
+    }
 }
+
 .cambiar-foto {
     position: absolute;
     width: 100%;
@@ -104,10 +127,6 @@
     }
 }
 
-.avatar-perfil:hover .cambiar-foto {
-    transform: translateY(0);
-    opacity: 1;
-}
 .datos-perfil {
     position: absolute;
     display: block;
@@ -118,13 +137,26 @@
     text-shadow: 0 0 5px  $clr-black;
     padding-bottom: 1rem;
     padding-right: 1rem;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        bottom: 200px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
 }
+
 .titulo-usuario {
     font-size: 2.3rem;
     white-space: nowrap;
     margin-bottom: .5rem;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        font-size: 2.1rem;
+    }
 }
 
 .opcciones-perfil {
@@ -143,34 +175,11 @@
     }
 }
 
-
 .icono-perfil {
     display: none;
     margin-right: .75rem;
-}
 
-
-@media (max-width: 780px) {
-    .contenedor-perfil {
-        width: 100%;
-    }
-    .avatar-perfil {
-        left: calc(50% - 115px)
-    }
-    .datos-perfil {
-        bottom: 200px;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        text-align: center;
-    }
-    .titulo-usuario {
-        font-size: 2.1rem;
-    }
-    .portada-perfil {
-        height: 28rem;
-    }
-    .icono-perfil {
+    @include media-queries.respond-to(media-queries.$phone){
         display: inline-block;
     }
 }

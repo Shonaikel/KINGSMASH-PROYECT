@@ -47,9 +47,6 @@ body{
     }
 }
 
-
-
-
 /* margin properties */
 .m-auto{
     margin-right: auto;
@@ -74,57 +71,6 @@ body{
     display: block;
   }
 
-.margin-text{
-    margin: revert;
-}
 
 
-/* gap - space between items */
-.gap-1{ gap: calc($fs-xsm  *  $spacer-xsm); }
-.gap-2{ gap: calc($fs-xsm  *  $spacer-sm); }
-.gap-3{ gap: calc($fs-xsm  *  $spacer-md); }
-.gap-4{ gap: calc($fs-xsm  *  $spacer-lg); }
-.gap-5{ gap: calc($fs-xsm  *  $spacer-xlg); }
-
-.main-title{
-    font-size: $fs-mdl;
-}
-
-.spacing{
-    word-spacing:(me-auto, mb-2, mb-lg-0, me-2);
-}
-
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-}
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
-    .card-size-top-10{
-        width: 103%;
-    }  
-    /*.text-size{
-        font-size: 10px;
-    }*/
-    .margin-carrusel{
-        margin-top: 5rem;  
-    }
-    .row-cols-md-5>* {
-        width: 33.33%;
-    }
-}
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-    
-}
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .margin-carrusel{
-        margin-top: 3rem;  
-    }  
-    .row-cols-md-5>* {
-        width: 100%;
-    }
-}
 
