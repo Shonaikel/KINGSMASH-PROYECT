@@ -31,47 +31,47 @@ const app= Vue.createApp({
         this.all_recipes = this.recipes;
     },
     methods:{
-        onClickLike(index){
-            //console.log("btn - click");
+        onClickLike(index) {
+            // console.log("btn-click");
             this.recipes[index].likes += 1;
         },
-        onClickUnlike(index){
-            if(this.recipes[index].likes > 0)this.recipes[index].likes -= 1;
+        onClickUnLike(index) {
+            if(this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
         },
-        onClickCategory(category){
+        onClickCategory(category) {
+            // console.log("category ->" + category);
             if(category == "All"){
                 this.recipes = this.all_recipes;
-            }else{
+            }else {
                 this.recipes = this.all_recipes;
                 let recipesInCategory = this.recipes.filter(function(el){
                     return el.category === category;
                 });
-            //console.log("filtered ->" + recipesInCategory); 
-
-                if (recipesInCategory.length > 0){
+                // console.log("filtered ->" + recipesInCategory.length);
+                if (recipesInCategory.length > 0) {
                     this.hasRecipes = true;
                     this.recipes = recipesInCategory;
-                }else{
+                } else {
                     this.hasRecipes = false;
                 }
             }
         },
-        onClickViewRecipe(index){
-            //console.log("INDEX ->" + index);
+        onClickViewRecipe(index) {
+            // console.log("INDEX -> " + index + "LENGTH ->" + this.recipes.length);
             this.selectedIndex = index;
         },
-        onClickPrev(){
+        onClickPrev() {
             this.selectedIndex--;
-            if(this.selectedIndex < 0){
+            if (this.selectedIndex < 0) {
                 this.selectedIndex = this.recipes.length-1;
-            }   
+            }
         },
-        onClickNext(){
-            //console.log("INDEX ->" + this.selectedIndex);
+        onClickNext() {
+            // console.log("Next -> " + this.selectedIndex);
             this.selectedIndex++;
-            if(this.selectedIndex > this.recipes.length-1){
+            if (this.selectedIndex > this.recipes.length-1) {
                 this.selectedIndex = 0;
-            }  
+            }
         }
     }
 });
