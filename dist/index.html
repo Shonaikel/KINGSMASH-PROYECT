@@ -36,7 +36,7 @@
                      
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="top-nav-item"><a class="nav-link top-nav-link top-nav-item" aria-current="page" href="./perfil.html">INICIO</a></li>
+                      <li class="top-nav-item"><a class="nav-link top-nav-link top-nav-item" aria-current="page" href="../dist/index.html">INICIO</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle top-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">CATEGORIA</a>
                         <ul class="dropdown-menu ">
@@ -70,10 +70,14 @@
                         </ul>
                     </li>
                 </ul>
-                  <form class="d-flex search-nav ps-5 pe-5 ">
+                  <form class="d-flex search-nav ps-5 nav-pe ">
                       <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
                       <a href="#"><img src="images/icons/lupa.png" alt="Lupa"></a>
+                        
                   </form>
+                  <div class="user-pe">
+                    <a  href="./perfil.html"><img class="user-size" src="images/icons/user.png" alt="Lupa"></a>
+                  </div>
               </div>
               <!--  responsive part -->
               <div class="offcanvas-header mt-5 mt-5-mb margin-nav-mb">
@@ -161,7 +165,7 @@
                             <button class="btn me-2 mb-2" v-on:click="onClickLike(index)"><img class="like-size" src="images/icons/likeso.png"></button>
                             <button class="btn me-2 mb-2" v-on:click="onClickUnLike(index)"><img class="like-size" src="images/icons/dislike.png"></button>
                           </div>
-                    <button class="btn btn-dark me-2 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" v-on:click="onClickViewRecipe(index)">VER RECETA</button>
+                    <a href="../dist/recetario.html"><button class="btn btn-dark me-2 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" v-on:click="onClickViewRecipe(index)">VER RECETA</button></a>
                 </div>  
             </div>
         </div>
@@ -224,7 +228,7 @@
 <!-- CONTAINER-->
 
 <!-- FOOTER-->
-  <footer class="row text-center footer-nav mt-5 top-nav container-fluid  ">
+  <footer class="row text-center footer-nav mt-5 top-nav container-fluid">
     <ul class="nav justify-content-center mt-4">
       <li class="nav-item "><a class="footer-text contact-text color-w nav-link active footer-info fs-4" aria-current="page" href="#">CONTACTANOS</a></li>
       <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">TERMINOS & CONDICIONES</a></li>
