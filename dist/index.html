@@ -152,23 +152,23 @@
 <section id="app" class="container">
 
   <!-- TOP 10 RECETAS -->
-    <section>
+   <!-- <section>
       <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS MÁS VOTADAS</h2></div>
       
       <div class="row row-cols-md-5 row-cols-1 g-4 ps-5 pe-4 card-size-top-10">
-        <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col-md">
+        <div v-if="hasRecetas" v-for="(recipe, index) in recetas" class="col-md">
             <div class="card p-3">
                   <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="card-img-top rounded" alt="TOP 10"></a>
                 <div class="card-body">
                     <h5 class="card-title text-recipe-name fs-4">{{ recipe.name }}</h5>
-                    <p class="mt-2 mb-1 color-r fs-5">{{ recipe.category }}</p>
+                    <p class="mt-2 mb-1 color-r fs-5">{{ recipe.categoria }}</p>
                     <p class="card-text text fs-5">{{ recipe.description }}</p>
                     <p class="mb-0 mt-4 text-recipe-info fs-6">{{ recipe.time }}</p>
                     <p class="mb-0 text-recipe-info fs-6">{{ recipe.level }}</p>
                           <div class="elements-l">   
                             <p class="mt-2 text-recipe-info fs-5">{{ recipe.likes }}</p>
-                            <button class="btn me-2 mb-2" v-on:click="onClickLike(index)"><img class="like-size" src="images/icons/likeso.png"></button>
-                            <button class="btn me-2 mb-2" v-on:click="onClickUnLike(index)"><img class="like-size" src="images/icons/dislike.png"></button>
+                            <button class="btn me-2 mb-2" v-on:click="onClickLike1(index)"><img class="like-size" src="images/icons/likeso.png"></button>
+                            <button class="btn me-2 mb-2" v-on:click="onClickUnLike1(index)"><img class="like-size" src="images/icons/dislike.png"></button>
                           </div>
                     <a href="../dist/recetario.html"><button class="btn btn-dark me-2 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" v-on:click="onClickViewRecipe(index)">VER RECETA</button></a>
                 </div>  
@@ -178,44 +178,61 @@
       </div>
     </section>
   <!-- TOP 10 RECETAS -->
+  <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
 
-  <!--BOTONES-->
-          <div class="ps-5">
-            <nav class="navbar navbar-expand-lg ">
+  <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
+   <!-- FILTRO BOTONES -->
+         <div class="row">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
-                          <li v-for="(category, index) in categories" class="nav-item me-3">
-                            <button class="btn btn-danger me-2 btn-lg" v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
-                          </li>
-                        </ul>
-                    </div> 
+                    <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
+                        <li v-for="(category, index) in categories" class="nav-item">
+                          <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                        </li>
+                    </ul>
                 </div>
             </nav>
+        </div> 
+    <!-- FILTRO BOTONES -->
+    <!-- RECETAS -->
+        <section class="row">
+          <div v-for="(item, index) in recipes" class="col-md-5">
+              <recipe-card 
+                  :image="item.image" 
+                  :category="item.category" 
+                  :name="item.name" 
+                  :description="item.instructions" 
+                  :time="item.time" 
+                  :level="item.level" 
+                  :likes="item.likes" 
+                  :index="item.id" 
+              v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
           </div>
-  <!--BOTONES-->
-   <!-- Filters botones  -->
-   <div class="row">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
+        </section>
+    <!-- RECETAS -->
+</section>
+<!--BOTONES-->
+<!--<div class="ps-5">
+  <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+          <div class="collapse navbar-collapse">
+              <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
+                <li v-for="(category, index) in categories" class="nav-item me-2">
+                  <recipe-category-button class="btn btn-danger" :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                  <!--<button class="btn btn-danger me-2 btn-lg" v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
+                </li>
+              </ul>
+          </div> 
+      </div>
+  </nav>
+</div>-->
+<!--BOTONES-->
 
-                <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
-                    
-                    <li v-for="(category, index) in categories" class="nav-item">
-                        <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
-                    </li>
-
-                </ul>
-
-        </div>
-    </nav>
-</div>
-<!-- Filters end -->
   <!-- RECETAS -->
-        <section>
+       <!-- <section>
           <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
-            
-          <section class="row row-cols-md-2 g-4 ps-5 pe-4 card-size-top-10">   
+  <!-- RECETAS -->
+         <!-- <section class="row row-cols-md-3 g-4 ps-5 pe-4 card-size-top-10">   
             <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col-sm">
                 <div class="card mb-3">
                     <div class="row g-0 m-2">
@@ -244,28 +261,7 @@
                 <p v-else class="fw-bold">No recipes for this category</p>
           </section>
         </section>
-  <!-- RECETAS -->
-
-<!--
-  <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
-
-   <!-- Filters cards -->
-   <section class="row">
-    <div v-for="(item, index) in recipes" class="col-md-3">
-        <recipe-card 
-            :image="item.image" 
-            :category="item.category" 
-            :name="item.name" 
-            :description="item.instructions" 
-            :time="item.time" 
-            :level="item.level" 
-            :likes="item.likes" 
-            :index="item.id" 
-        v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-    </div>
-</section>
-
-</section>
+  
 <!-- CONTAINER-->
 
 <!-- FOOTER-->
@@ -288,7 +284,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- AXIOS API JS end -->
   
-  <script src="./js/main.js"></script>
+
   <script src="./js/component.js"></script>
   <script src="./js/components/RecipeCard.js"></script>
   <script src="./js/components/RecipeDetails.js"></script>

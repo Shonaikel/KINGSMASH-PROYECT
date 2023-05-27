@@ -48,7 +48,7 @@ const app = Vue.createApp({
                             category: "Seafood",
                             time: "20 min",
                             level: "Easy",
-                            likes: 5,
+                            likes: 15,
                             ingredients: "NA",
                             instructions: "NA"
                         });
@@ -134,7 +134,7 @@ const app = Vue.createApp({
                             category: category,
                             time: "20 min",
                             level: "Easy",
-                            likes: 5,
+                            likes: 15,
                             ingredients: "NA",
                             instructions: "NA"
                         });
