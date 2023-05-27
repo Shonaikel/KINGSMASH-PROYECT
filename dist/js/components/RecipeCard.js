@@ -50,9 +50,7 @@ data() {
     },
     template:
       /*html*/
-  `<div class="">
-    <div class="card mb-3">
-        
+  `<div class="card mb-3">
         <div class="row g-0 m-2">
             <div class="col-md-4">
             <a href=""><img v-bind:src="image" class="card-img-top" alt="featured recipe"></a>
@@ -74,8 +72,7 @@ data() {
             </div>
         </div>
         </div>
-    </div>
-  </div>`,
+    </div>`,
   });
   /*
    <section class="row row-cols-md-3 g-4 ps-5 pe-4 card-size-top-10">   

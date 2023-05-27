@@ -180,20 +180,39 @@
   <!-- TOP 10 RECETAS -->
   <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
 
+
+  <!--BOTONES-->
+<!--<div class="ps-5">
+  <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+          <div class="collapse navbar-collapse">
+              <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
+                <li v-for="(category, index) in categories" class="nav-item me-2">
+                  <recipe-category-button class="btn btn-danger" :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                  <!--<button class="btn btn-danger me-2 btn-lg" v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
+                </li>
+              </ul>
+          </div> 
+      </div>
+  </nav>
+</div>-->
+<!--BOTONES-->
   <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
-   <!-- FILTRO BOTONES -->
-         <div class="row">
+   
+  <!-- BOTONES -->
+         <div class="ps-5">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
-                        <li v-for="(category, index) in categories" class="nav-item">
+                        <li v-for="(category, index) in categories" class="nav-item me-2">
                           <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div> 
-    <!-- FILTRO BOTONES -->
+    <!-- BOTONES -->
+
     <!-- RECETAS -->
         <section class="row">
           <div v-for="(item, index) in recipes" class="col-md-5">
@@ -211,22 +230,6 @@
         </section>
     <!-- RECETAS -->
 </section>
-<!--BOTONES-->
-<!--<div class="ps-5">
-  <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-          <div class="collapse navbar-collapse">
-              <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
-                <li v-for="(category, index) in categories" class="nav-item me-2">
-                  <recipe-category-button class="btn btn-danger" :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
-                  <!--<button class="btn btn-danger me-2 btn-lg" v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
-                </li>
-              </ul>
-          </div> 
-      </div>
-  </nav>
-</div>-->
-<!--BOTONES-->
 
   <!-- RECETAS -->
        <!-- <section>
