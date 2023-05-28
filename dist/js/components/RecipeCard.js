@@ -68,7 +68,7 @@ data() {
               <button class="btn me-2 mb-3" v-on:click="onClickUnlike()"><img class="like-size" src="images/icons/dislike.png"></button>
           </div>
       <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      View Recipe</button>
+      View Recipe</button> 
       </div>
   </div>
   </div>
