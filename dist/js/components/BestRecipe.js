@@ -50,52 +50,51 @@ data() {
     },
     template:
       /*html*/
-  `<div class="card mb-3">
-        <div class="row g-0 m-2">
-            <div class="col-md-4">
-            <a href=""><img v-bind:src="image" class="card-img-top" alt="featured recipe"></a>
-            </div>
+  `
+  <div class="col-md">
+    <div class="card p-3">
+      <a href=""><img v-bind:src="image" class="card-img-top rounded" alt="TOP 10"></a>
+    <div class="card-body">
+        <h5 class="card-title text-recipe-name fs-4">{{ name }}</h5>
+        <p class="mt-2 mb-1 color-r fs-5">{{ category }}</p>
+        <p class="card-text text fs-5">{{ description }}</p>
+        <p class="mb-0 mt-4 text-recipe-info fs-6">{{ time }}</p>
+        <p class="mb-0 text-recipe-info fs-6">{{ level }}</p>
+              <div class="elements-l">
+                  <p class="mt-2 text-recipe-info fs-6">{{ addLikes }}</p>
+                  <button class="btn me-2 mb-3" v-on:click="onClickLike()"><img class="like-size" src="images/icons/likeso.png"></button>
+                  <button class="btn me-2 mb-3" v-on:click="onClickUnlike()"><img class="like-size" src="images/icons/dislike.png"></button>
+              </div>
+              <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              View Recipe</button>
+              </div>  
+         </div>
+    </div>
+  </div>
+`,
+  });
 
-        <div class="col-md-8">
-            <div class="card-body pt-0">
-                <p class="mt-2 mb-1 color-r fs-5">{{ category }}</p>
-                <h5 class="fs-4">{{ name }}</h5>
-                <p class="mb-0 text-recipe-info fs-6">{{ time }}</p>
-                <p class="mb-4 text-recipe-info fs-6">{{ level }}</p>
+  /*
+   <div class="">
+    <div class="col-md">
+      <div class="card p-3">
+        <a href=""><img v-bind:src="image" class="card-img-top rounded" alt="TOP 10"></a>
+      <div class="card-body">
+          <h5 class="card-title text-recipe-name fs-4">{{ name }}</h5>
+          <p class="mt-2 mb-1 color-r fs-5">{{ category }}</p>
+          <p class="card-text text fs-5">{{ description }}</p>
+          <p class="mb-0 mt-4 text-recipe-info fs-6">{{ time }}</p>
+          <p class="mb-0 text-recipe-info fs-6">{{ level }}</p>
                 <div class="elements-l">
                     <p class="mt-2 text-recipe-info fs-6">{{ addLikes }}</p>
                     <button class="btn me-2 mb-3" v-on:click="onClickLike()"><img class="like-size" src="images/icons/likeso.png"></button>
                     <button class="btn me-2 mb-3" v-on:click="onClickUnlike()"><img class="like-size" src="images/icons/dislike.png"></button>
                 </div>
-            <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            View Recipe</button>
-            </div>
-        </div>
-        </div>
-    </div>`,
-  });
-
-  /*
-   <div class="">
-  <div class="col-md">
-  <div class="card p-3">
-  <a href=""><img v-bind:src="image" class="card-img-top rounded" alt="TOP 10"></a>
-<div class="card-body">
-    <h5 class="card-title text-recipe-name fs-4">{{ name }}</h5>
-    <p class="mt-2 mb-1 color-r fs-5">{{ category }}</p>
-    <p class="card-text text fs-5">{{ description }}</p>
-    <p class="mb-0 mt-4 text-recipe-info fs-6">{{ time }}</p>
-    <p class="mb-0 text-recipe-info fs-6">{{ level }}</p>
-          <div class="elements-l">   
-              <p class="mt-2 text-recipe-info fs-5">{{ addlikes }}</p>
-              <button class="btn me-2 mb-2" v-on:click="onClickLike1()"><img class="like-size" src="images/icons/likeso.png"></button>
-              <button class="btn me-2 mb-2" v-on:click="onClickUnLike1()"><img class="like-size" src="images/icons/dislike.png"></button>
-          </div>
-          <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          View Recipe</button>
-</div>  
-</div>
-</div>
-</div>
-</div>
+                <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                View Recipe</button>
+                </div>  
+           </div>
+      </div>
+    </div>
+  </div>
   */

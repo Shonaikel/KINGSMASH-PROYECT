@@ -75,16 +75,17 @@ data() {
 </div>`,
   });
   /*
-   <section class="row row-cols-md-3 g-4 ps-5 pe-4 card-size-top-10">   
+   <!-- RECETAS -->
+       <!-- <section>
+          <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
+  <!-- RECETAS -->
+         <!-- <section class="row row-cols-md-3 g-4 ps-5 pe-4 card-size-top-10">   
             <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col-sm">
                 <div class="card mb-3">
-
                     <div class="row g-0 m-2">
-                          
                           <div class="col-md-4">
                             <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="img-fluid rounded " alt="featured recipe"></a>
                           </div>
-
                       <div class="col-md-8">
                           <div class="card-body pt-0">
                             <p class="mt-2 mb-1 color-r fs-5">{{ recipe.category }}</p>
@@ -107,4 +108,6 @@ data() {
                 <p v-else class="fw-bold">No recipes for this category</p>
           </section>
         </section>
+  
   */
+ 

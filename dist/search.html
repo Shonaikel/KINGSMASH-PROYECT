@@ -18,16 +18,11 @@
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <!-- JavaScript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <link rel="stylesheet" href="./css/main.css">
 <title>Kingsmash</title>
 </head>
 <body>
-  <!-- Loading -->
-      <!--<div v-show="loading" class="position-absolute top-0 z-2" style="width: 100%; height: 100vh;"> 
-        <img class="d-block img-fluid w-100" src="./images/Loading.gif" alt="Loading">
-      </div>-->
-  <!-- Loading end -->
-
   <!-- HEADER -->
         <header>
               <div class="position-absolute top-0 start-0 pt-3 pb-3 ps-3 mobile-bar position-tab">
@@ -77,10 +72,9 @@
                     </li>
                 </ul>
                   <form class="d-flex search-nav ps-5 nav-pe ">
-                    <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
-                      <a href="./search.html"><img src="images/icons/lupa.png" alt="Lupa"></a>
+                      <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
+                      <a href="#"><img src="images/icons/lupa.png" alt="Lupa"></a>
                   </form>
-
                   <div class="user-pe">
                     <a  href="./perfil.html"><img class="user-size" src="images/icons/user.png" alt="Lupa"></a>
                   </div>
@@ -139,81 +133,69 @@
         </header>
   <!-- HEADER -->
 
-  <!-- CARRUSEL -->
-    <div>
-      <div class="main-carousel margin-carrusel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true}'>
-        <div class="carousel-cell"><img src="./images/imgs/promo3.jpg" class="d-block w-100" alt="promo1" /></div>
-        <div class="carousel-cell"><img src="./images/imgs/promo2.jpg" class="d-block w-100" alt="promo2" /></div>
-        <div class="carousel-cell"><img src="./images/imgs/promo1.jpg" class="d-block w-100" alt="promo1" /></div>
-      </div>
-    </div>
-  <!-- CARRUSEL -->
-
 <!-- CONTAINER-->
 <section id="app" class="container">
 
-  <!-- TOP 10 RECETAS -->
-    <section>
-      <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS MÁS VOTADAS</h2></div>
-      <!-- BEST RECETAS -->
-      <section class="row row-cols-md-5 row-cols-1 g-3 ps-6 pe-7 card-size-top-10">
-        <div v-for="(item, index) in bestrecipes" class="">
-          <best-recipe 
-          :image="item.image" 
-          :category="item.category" 
-          :name="item.name" 
-          :description="item.instructions" 
-          :time="item.time" 
-          :level="item.level" 
-          :likes="item.likes" 
-          :index="item.id" 
-      v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></best-recipe>
-                
+    <div class = "meal-wrapper">
+        <div class = "meal-search">
+          <h2 class = "title">Find Meals For Your Ingredients</h2>
+          <blockquote>Real food doesn't have ingredients, real food is ingredients.<br>
+            <cite>- Jamie Oliver</cite>
+          </blockquote>
+  
+          <div class = "meal-search-box">
+            <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
+            <button type = "submit" class = "search-btn btn" id = "search-btn">
+              <i class = "fas fa-search"></i>
+            </button>
+          </div>
         </div>
-      </section>
-  <!-- BEST RECETAS -->
+  
+        <div class = "meal-result">
+          <h2 class = "title">Your Search Results:</h2>
+          <div id= "meal">
+          </div>
+        </div>
+  
+  
+        <div class = "meal-details">
+          <!-- recipe close btn -->
+          <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+            <i class = "fas fa-times"></i>
+          </button>
+  
+          <!-- meal content -->
+          <div class = "meal-details-content">
+          </div>
+        </div>
+      </div>
 
-    <!--  
-      <div class="row row-cols-md-5 row-cols-1 g-4 ps-5 pe-4 card-size-top-10">
-        <div v-if="hasRecetas" v-for="(recipe, index) in recetas" class="col-md">
-            <div class="card p-3">
-                  <a href="../dist/recetario.html"><img v-bind:src="recipe.image" class="card-img-top rounded" alt="TOP 10"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-recipe-name fs-4">{{ recipe.name }}</h5>
-                    <p class="mt-2 mb-1 color-r fs-5">{{ recipe.categoria }}</p>
-                    <p class="card-text text fs-5">{{ recipe.description }}</p>
-                    <p class="mb-0 mt-4 text-recipe-info fs-6">{{ recipe.time }}</p>
-                    <p class="mb-0 text-recipe-info fs-6">{{ recipe.level }}</p>
-                          <div class="elements-l">   
-                            <p class="mt-2 text-recipe-info fs-5">{{ recipe.likes }}</p>
-                            <button class="btn me-2 mb-2" v-on:click="onClickLike1(index)"><img class="like-size" src="images/icons/likeso.png"></button>
-                            <button class="btn me-2 mb-2" v-on:click="onClickUnLike1(index)"><img class="like-size" src="images/icons/dislike.png"></button>
-                          </div>
-                    <a href="../dist/recetario.html"><button class="btn btn-dark me-2 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" v-on:click="onClickViewRecipe(index)">VER RECETA</button></a>
-                </div>  
-            </div>
-        </div>
-              <p v-else class="fw-bold">No hay receta en esta categoria</p>
-      </div>
-    </section>
-  <!-- TOP 10 RECETAS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS</h2></div>
-  <!--BOTONES-->
-<!--<div class="ps-5">
-  <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-          <div class="collapse navbar-collapse">
-              <ul class="navbar-nav me-auto mb-2 mt-3 mb-lg-0">
-                <li v-for="(category, index) in categories" class="nav-item me-2">
-                  <recipe-category-button class="btn btn-danger" :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
-                  <!--<button class="btn btn-danger me-2 btn-lg" v-on:click="onClickCategory(category.name)" aria-current="page">{{ category.name }}</button>
-                </li>
-              </ul>
-          </div> 
-      </div>
-  </nav>
-</div>-->
-<!--BOTONES-->
+
     <!-- BOTONES -->
           <div class="ps-5">
               <nav class="navbar navbar-expand-lg">
@@ -227,44 +209,8 @@
               </nav>
           </div> 
     <!-- BOTONES -->
-
-    <!-- RECETAS -->
-    <!-- 
-      *espacio abajo: g-2
-      *espacio entre cards medio: ps-4 
-      *espacio lateral derecho: pe-2 
-    -->
-    <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
-        <section class="row">
-          <div v-for="(item, index) in recipes" class="row col-md-2 col-md-6 g-2 ps-5 pe-1">
-              <recipe-card 
-                  :image="item.image" 
-                  :category="item.category" 
-                  :name="item.name" 
-                  :description="item.instructions" 
-                  :time="item.time" 
-                  :level="item.level" 
-                  :likes="item.likes" 
-                  :index="item.id" 
-              v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-          </div>
-        </section>
-    <!-- RECETAS -->
 </section>
-<!-- CONTAINER-->
 
-<!-- FOOTER-->
-  <footer class="position-absolute start-0 row text-center footer-nav mt-5 top-nav container-fluid">
-    <ul class="nav justify-content-center mt-4">
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link active footer-info fs-4" aria-current="page" href="#">CONTACTANOS</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">TERMINOS & CONDICIONES</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">POLITICA DE PRIVACIDAD</a></li>
-      <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">DECLARACION DE ACCESIBILIDAD</a></li>
-    </ul>
-    <p class="mb-0 footer-terms color-w">Kingsmash y su logo son marcas registradas.</p>
-    <p class="footer-terms mb-3 color-w">© 2023 Kingsmash.</p>
-  </footer>
-<!-- FOOTER-->
 
     <!-- VueJS -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
@@ -272,10 +218,9 @@
     <!-- AXIOS API JS -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- AXIOS API JS end -->
-  
+  <script src="./js/search.js"></script>
   <script src="./js/component.js"></script>
   <script src="./js/components/RecipeCard.js"></script>
-  <script src="./js/components/BestRecipe.js"></script>
   <script src="./js/components/RecipeDetails.js"></script>
   <script src="./js/components/ClickCounter.js"></script>
   <script src="./js/components/RecipeCategoryButton.js"></script>
