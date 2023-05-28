@@ -27,19 +27,18 @@ const app= Vue.createApp({
             ] 
         }
     },
+    
     mounted: function(){
         this.all_recetas = this.recetas;
     },
     methods:{
         onClickLike(index) {
-            // console.log("btn-click");
             this.recetas[index].likes += 1;
         },
         onClickUnLike(index) {
             if(this.recetas[index].likes > 0) this.recetas[index].likes -= 1;
         },
         onClickCategory(category) {
-            // console.log("category ->" + category);
             if(category == "All"){
                 this.recetas = this.all_recetas;
             }else {
@@ -47,7 +46,6 @@ const app= Vue.createApp({
                 let recipesInCategoria = this.recetas.filter(function(el){
                     return el.category === category;
                 });
-                // console.log("filtered ->" + recipesInCategory.length);
                 if (recipesInCategoria.length > 0) {
                     this.hasRecetas = true;
                     this.recetas = recipesInCategoria;
@@ -57,7 +55,6 @@ const app= Vue.createApp({
             }
         },
         onClickViewRecipe(index) {
-            // console.log("INDEX -> " + index + "LENGTH ->" + this.recipes.length);
             this.selectIndex = index;
         },
         onClickPrev() {
@@ -67,11 +64,11 @@ const app= Vue.createApp({
             }
         },
         onClickNext1() {
-            // console.log("Next -> " + this.selectedIndex);
             this.selectIndex++;
             if (this.selectIndex > this.recetas.length-1) {
                 this.selectIndex = 0;
             }
         }
     }
+    
 });

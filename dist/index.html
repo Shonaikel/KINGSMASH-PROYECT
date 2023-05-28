@@ -152,9 +152,27 @@
 <section id="app" class="container">
 
   <!-- TOP 10 RECETAS -->
-   <!-- <section>
+    <section>
       <div class="mb-4"><h2 class="title-margin ps-5 pe-5">RECETAS MÁS VOTADAS</h2></div>
-      
+      <!-- BEST RECETAS -->
+      <section class="row">
+        <div v-for="(item, index) in bestrecipes" class=" g-4 ps-1 pe-4 col-md-3">
+          <recipe-card 
+          :image="item.image" 
+          :category="item.category" 
+          :name="item.name" 
+          :description="item.instructions" 
+          :time="item.time" 
+          :level="item.level" 
+          :likes="item.likes" 
+          :index="item.id" 
+      v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                
+        </div>
+      </section>
+  <!-- BEST RECETAS -->
+
+    <!--  
       <div class="row row-cols-md-5 row-cols-1 g-4 ps-5 pe-4 card-size-top-10">
         <div v-if="hasRecetas" v-for="(recipe, index) in recetas" class="col-md">
             <div class="card p-3">
@@ -197,25 +215,30 @@
   </nav>
 </div>-->
 <!--BOTONES-->
-  <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
-   
+  
   <!-- BOTONES -->
-         <div class="ps-5">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
-                        <li v-for="(category, index) in categories" class="nav-item me-2">
-                          <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div> 
+          <div class="ps-5">
+              <nav class="navbar navbar-expand-lg">
+                  <div class="container-fluid">
+                      <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
+                          <li v-for="(category, index) in categories" class="nav-item me-2">
+                            <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
+          </div> 
     <!-- BOTONES -->
 
     <!-- RECETAS -->
+    <!-- 
+      *espacio abajo: g-2
+      *espacio entre cards medio: ps-4 
+      *espacio lateral derecho: pe-2 
+    -->
+    <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients" :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe" v-on:nextrecipe="onClickNextRecipe"></recipe-details>
         <section class="row">
-          <div v-for="(item, index) in recipes" class="col-md-5">
+          <div v-for="(item, index) in recipes" class="row col-md-2 col-md-6 g-2 ps-5 pe-1">
               <recipe-card 
                   :image="item.image" 
                   :category="item.category" 
@@ -268,7 +291,7 @@
 <!-- CONTAINER-->
 
 <!-- FOOTER-->
-  <footer class="row text-center footer-nav mt-5 top-nav container-fluid">
+  <footer class="position-absolute start-0 row text-center footer-nav mt-5 top-nav container-fluid">
     <ul class="nav justify-content-center mt-4">
       <li class="nav-item "><a class="footer-text contact-text color-w nav-link active footer-info fs-4" aria-current="page" href="#">CONTACTANOS</a></li>
       <li class="nav-item "><a class="footer-text contact-text color-w nav-link footer-info fs-4" href="#">TERMINOS & CONDICIONES</a></li>
@@ -287,7 +310,6 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- AXIOS API JS end -->
   
-
   <script src="./js/component.js"></script>
   <script src="./js/components/RecipeCard.js"></script>
   <script src="./js/components/RecipeDetails.js"></script>
