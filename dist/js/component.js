@@ -35,11 +35,7 @@ const app = Vue.createApp({
    //axios que trae las 10 mejores recetas
     axios({      
      method: 'get',
-    url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood&num=10'  ,
-    params: {
-        c: 'Seafood',
-        number: 10
-      }
+    url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
     })
         .then(
             (response) => {
@@ -47,7 +43,7 @@ const app = Vue.createApp({
             
                 this.bestrecipes=[];
 
-                 items.forEach( element => {
+                 items.slice(0,10).forEach( element => {
                     this.bestrecipes.push({
                         id:element.idMeal,
                         image: element.strMealThumb,
@@ -63,8 +59,6 @@ const app = Vue.createApp({
                 }
             )
             .catch(error => console.log(error)); 
-                
- 
  //---------------------------------------------------------------------- 
     axios({
      method: 'get',
