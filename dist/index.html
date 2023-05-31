@@ -76,10 +76,10 @@
                         </ul>
                     </li>
                 </ul>
-                  <form class="d-flex search-nav ps-5 nav-pe ">
-                    <input class="form-control me-2 " type="text" placeholder="Buscar Recetas...">
-                      <a href="./search.html"><img src="images/icons/lupa.png" alt="Lupa"></a>
-                  </form>
+                  <div class="d-flex search-nav ps-5 nav-pe">
+                    <input type = "text" class="form-control me-2 " type="text" placeholder="Buscar Recetas..." id = "search-input1">
+                      <button type = "submit" class = "search-btn btn" id = "search-btn"><img class = "fas fa-search" src="images/icons/lupa.png" alt="Lupa"></button>
+                  </div>
 
                   <div class="user-pe">
                     <a  href="./perfil.html"><img class="user-size" src="images/icons/user.png" alt="Lupa"></a>
@@ -148,6 +148,48 @@
       </div>
     </div>
   <!-- CARRUSEL -->
+
+      <div class = "meal-result">
+        <!--<h2 class = "title">Your Search Results:</h2>-->
+        <div id= "meal"> <!-- muestra reseta -->
+          <!-- meal item -->
+          <!-- <div class = "meal-item">
+            <div class = "meal-img">
+              <img src = "food.jpg" alt = "food">
+            </div>
+            <div class = "meal-name">
+              <h3>Potato Chips</h3>
+              <a href = "#" class = "recipe-btn">Get Recipe</a>
+            </div>
+          </div> -->
+          <!-- end of meal item -->
+        </div>
+      </div>
+
+      <div class = "meal-details">
+        <!-- recipe close btn -->
+        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+          <i class = "fas fa-times"></i>
+        </button>
+
+        <!-- meal content -->
+        <div class = "meal-details-content">
+          <!-- <h2 class = "recipe-title">Meals Name Here</h2>
+          <p class = "recipe-category">Category Name</p>
+          <div class = "recipe-instruct">
+            <h3>Instructions:</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p>
+          </div>
+          <div class = "recipe-meal-img">
+            <img src = "food.jpg" alt = "">
+          </div>
+          <div class = "recipe-link">
+            <a href = "#" target = "_blank">Watch Video</a>
+          </div> -->
+        </div>
+
+
 
 <!-- CONTAINER-->
 <section id="app" class="container">
@@ -234,6 +276,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- AXIOS API JS end -->
   
+  <script src="./js/components/search.js"></script>
   <script src="./js/component.js"></script>
   <script src="./js/components/RecipeCard.js"></script>
   <script src="./js/components/BestRecipe.js"></script>
