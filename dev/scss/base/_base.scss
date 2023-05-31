@@ -1,5 +1,6 @@
-@use './vendor/bootstrap/bootstrap.scss';
-@use '../abstracts/vars';
+@use './vendors/bootstrap/bootstrap.scss';
+@import "../abstracts/vars";
+
 /* INFORMACION GENERAL PAGINA */
  *{
     margin: 0;

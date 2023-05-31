@@ -1,8 +1,8 @@
-@use './vendor/bootstrap/bootstrap.scss';
-@use '../scss/abstracts/vars';
-@use '../scss/abstracts/mixins';
-@use '../scss/base/typhography';
-@use '../media-queries';
+@import './vendors/bootstrap/bootstrap.scss';
+@import '../abstracts/vars';
+@import '../abstracts/mixins';
+@import '../base/typography';
+@import '../media-queries';
 
 .header{
     width: 100% !important;
@@ -57,7 +57,7 @@
     display: none;
 }
 
-@include media-queries.respond-to(media-queries.$phone){
+@include respond-to($phone){
     .navbar-nav{
         padding: $fs-mdl;
         text-align: center;
@@ -114,7 +114,7 @@
     }
 }
 
-@include media-queries.respond-to(media-queries.$tablet-landscape){
+@include respond-to($tablet-landscape){
     .mobile-bar{
         z-index: 10;
     }
@@ -139,7 +139,7 @@
     } 
 }
 
-@include media-queries.respond-to(media-queries.$phone){
+@include respond-to($phone){
     .mobile-bar{
         z-index: 10;
     }

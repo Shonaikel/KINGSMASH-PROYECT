@@ -1,9 +1,9 @@
-@use './vendor/bootstrap/bootstrap.scss';
-@use '../scss/abstracts/vars';
-@use '../scss/base/base';
-@use '../scss/base/typhography';
-@use '../scss/abstracts/mixins';
-@use '../media-queries';
+@import './vendors/bootstrap/bootstrap.scss';
+@import "../abstracts/vars";
+@import '../base/base';
+@import '../base/typography';
+@import '../abstracts/mixins';
+@import '../media-queries';
 
 /* CONFIGURACIONES DE CARDS */
 .card-size{
@@ -13,7 +13,7 @@
 .card-size-top-10{
     width: 101%;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         width: 103%;
     } 
 }
@@ -62,7 +62,7 @@
     margin-right: auto;
     width: 90%;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         width: 100%;    
     }
 }
@@ -76,7 +76,7 @@
     height: 20rem;
     margin-bottom: .5rem;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         height: 28rem;
     }
 }
@@ -99,7 +99,7 @@
         opacity: 1;
     }
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         left: calc(50% - 115px)
     }
 }
@@ -138,7 +138,7 @@
     padding-bottom: 1rem;
     padding-right: 1rem;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         bottom: 200px;
         left: 0;
         width: 100%;
@@ -154,7 +154,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         font-size: 2.1rem;
     }
 }
@@ -179,7 +179,7 @@
     display: none;
     margin-right: .75rem;
 
-    @include media-queries.respond-to(media-queries.$phone){
+    @include respond-to($phone){
         display: inline-block;
     }
 }

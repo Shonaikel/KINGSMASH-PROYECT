@@ -59,6 +59,7 @@ const app = Vue.createApp({
                 }
             )
             .catch(error => console.log(error)); 
+            //quarryselector del id imput.value
  //---------------------------------------------------------------------- 
     axios({
      method: 'get',

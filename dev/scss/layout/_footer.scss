@@ -1,8 +1,8 @@
-@use './vendor/bootstrap/bootstrap.scss';
-@use '../scss/abstracts/vars';
-@use '../scss/base/base';
-@use '../scss/base/typhography';
-@use '../media-queries';
+@import './vendors/bootstrap/bootstrap.scss';
+@import '../abstracts/vars';
+@import '../base/base';
+@import '../base/typography';
+@import '../media-queries';
 
 .footer-item{
     list-style-type: none;
