@@ -1,61 +1,70 @@
 app.component('recipe-details', {
-    //props q mostraran la info de la receta
-     props: {
-         name: {
-             type:String
-         },
-         image: {
-             type:String
-         },
-         ingredients: {
-             type:String
-         },
-         instructions: {
-             type:String
-         },
-         category: {
-            type: String,
-          },
-        time: {
-            type: String,
-          },
-        level: {
-            type: String,
-          },
-        likes: {
-            type: Number,
-            default: 1
-          },
-          index: {
-            type: String
+    props: {
+        index: {
+            type: Number
         }
-     },
-     data() {
+    },
+    data() {
         return {
-          addLikes: this.likes
+            recipe: {
+                id: null,
+                name: '',
+                image: '',
+                ingredients: '',
+                instructions: '',
+                category: '',
+                time: '',
+                level: '',
+                likes: 1
+            }
         }
-      },
-     mounted() {
-     },
-     methods: {
+    },
+    mounted() {
+        this.fetchRecipeDetails();
+    },
+    watch: {
+        index() {
+            this.fetchRecipeDetails();
+        }
+    },
+    methods: {
+        fetchRecipeDetails() {
+            axios.get('http://localhost/interactivas3/public/api/recipes/recipe/' + this.index)
+                .then(response => {
+                    console.log(response);
+                    const item = response.data[0][0];
+                    this.recipe.id = item.id;
+                    this.recipe.name = item.name;
+                    this.recipe.image = 'http://localhost/interactivas3/public/storage/imgs/'+ item.image;
+                    this.recipe.ingredients = item.ingredients;
+                    this.recipe.instructions = item.instructions;
+                    this.recipe.category = item.category;
+                    this.recipe.time = item.time;
+                    this.recipe.level = item.level;
+                    this.recipe.likes = item.likes;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        },
         onClickPrev() {
-            console.log("PREV");
-            this.$emit('prevrecipe',this.index);
+            this.$emit('prevrecipe', this.index);
         },
         onClickNext() {
-            console.log("NEXT");
-            this.$emit('nextrecipe',this.index);
+            this.$emit('nextrecipe', this.index);
         },
-         onClickLike() {
-            this.addLikes++;
-          },
-          onClickUnlike() {
-            if(this.addLikes > 0) this.addLikes--;
-          },
-          onClicKViewRecipe() {
+        onClickLike() {
+            this.recipe.likes++;
+        },
+        onClickUnlike() {
+            if (this.recipe.likes > 0) {
+                this.recipe.likes--;
+            }
+        },
+        onClickViewRecipe() {
             this.$emit('recipedetails', this.index);
-          }
-     },
+        }
+    },
      template: 
      /*html*/
  `<div class="modal fade bd-example-modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -64,7 +73,9 @@ app.component('recipe-details', {
             <div class="modal-header color-light">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="h4"><h1 class="ps-5 pe-5 " id="staticBackdropLabel">{{ name }}</h1></div>
+               
                 <div class="row g-1 ps-5 pe-5 ">
                     <div class="col-md">
                         <div class="card card-size p-3">

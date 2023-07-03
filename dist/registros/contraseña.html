@@ -9,17 +9,93 @@
 </head>
 <body>
     <div class="signupFrm">
-        <form action="" class="form">
+        <form id="recoverPasswordForm" class="form">
           <h1 class="title">Recuperar Contraseña</h1>
-            <p>Para verificar tu identidad enviaremos un código al correo electrónico registrado.</p>
+          <p>Para verificar tu identidad, enviaremos un código al correo electrónico registrado.</p>
           <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Correo Electronico</label>
+            <input type="text" class="input" placeholder="a" name="email">
+            <label for="" class="label">Correo Electrónico</label>
           </div>
           
-          <input  href="../registros/codigo.html" type="submit" class="submitBtn" value="Enviar Código">
-          <a class="link"  href="../registros/codigo.html"> Siguiente pag </a>
+          <input type="submit" class="submitBtn" value="Enviar Código">
+          <a class="link" href="./inicio.html">volver a inicio de sesion</a>
         </form>
-      </div>
+    </div>
+
+    <script>
+    var submitted = false;
+
+    document.getElementById("recoverPasswordForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (submitted) {
+        // Si ya se ha enviado el formulario, no hacer nada
+        return;
+      }
+
+      // Obtener el correo electrónico ingresado
+      var formData = new FormData(this);
+      var email = formData.get("email");
+
+      // Validar que se haya ingresado un correo electrónico
+      if (!email) {
+        // Mostrar mensaje de error al usuario
+        alert("Por favor, ingresa tu correo electrónico.");
+        return;
+      }
+
+      // Realizar la solicitud HTTP POST para recuperar la contraseña
+      fetch("http://interactivas3.test/api/users/recoverpassword", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // La solicitud fue exitosa, puedes realizar alguna acción adicional si lo deseas
+          return response.json();
+        } else {
+          // Hubo un error en la solicitud
+          throw new Error("Error en la solicitud: " + response.status);
+        }
+      })
+      .then(data => {
+        // Obtener la contraseña generada de la respuesta
+        var generatedPassword = data.password;
+
+        // Crear el nuevo campo con la contraseña generada
+        var newPasswordContainer = document.createElement("div");
+        newPasswordContainer.classList.add("inputContainer");
+        var newPasswordInput = document.createElement("input");
+        newPasswordInput.type = "text";
+        newPasswordInput.classList.add("input");
+        newPasswordInput.value = generatedPassword;
+        newPasswordInput.readOnly = true;
+        var newPasswordLabel = document.createElement("label");
+        newPasswordLabel.classList.add("label");
+        newPasswordLabel.textContent = "Contraseña Generada";
+        newPasswordContainer.appendChild(newPasswordInput);
+        newPasswordContainer.appendChild(newPasswordLabel);
+
+        // Obtener el contenedor del correo electrónico
+        var emailContainer = document.querySelector(".inputContainer");
+
+        // Insertar el nuevo campo justo debajo del contenedor de correo electrónico
+        emailContainer.parentNode.insertBefore(newPasswordContainer, emailContainer.nextSibling);
+
+        // Marcar el formulario como enviado
+        submitted = true;
+      })
+      .catch(error => {
+        console.error("Error en la solicitud:", error);
+      });
+    });
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+

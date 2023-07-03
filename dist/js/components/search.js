@@ -20,16 +20,27 @@ function getMealList(){
         if(data.meals){
             data.meals.forEach(meal => {
                 html += `
-                    <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
-                        </div>
-                        <div class = "meal-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                    <div class="col-md">
+                        <div class="card p-3">
+                        <a href=""><img src="${meal.strMealThumb}" class="card-img-top rounded" alt="fod"></a>
+                            <div class="card-body">
+                            <h5 class="card-title text-recipe-name fs-4">${meal.strMeal}</h5>
+                            <p class="mt-2 mb-1 color-r fs-5">${meal.strCategory}</p>
+                            <p class="mb-0 mt-4 text-recipe-info fs-6">15 min</p>
+                            <p class="mb-0 text-recipe-info fs-6">Easy</p>
+                                <div class="elements-l">
+                                    <p class="mt-2 text-recipe-info fs-6">100</p>
+                                    <button class="btn me-2 mb-3" v-on:click="onClickLike()"><img class="like-size" src="images/icons/likeso.png"></button>
+                                    <button class="btn me-2 mb-3" v-on:click="onClickUnlike()"><img class="like-size" src="images/icons/dislike.png"></button>
+                                </div>
+                                <div class="elements-l">
+                                    <button class="btn btn-dark fw-bold me-2 mb-3" v-on:click="onClicKViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Recipe</button>
+                                    <button class="btn fw-bold me-2 mb-3"><img class="like-size" src="images/icons/add.png"></button>
+                                </div> 
+                            </div>
                         </div>
                     </div>
-                `;
+              `;
             });
             mealList.classList.remove('notFound');
         } else{

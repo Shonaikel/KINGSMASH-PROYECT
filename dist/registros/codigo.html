@@ -11,15 +11,32 @@
     <div class="signupFrm">
         <form action="" class="form">
           <h1 class="title">Recuperar Contraseña</h1>
-            <p>Digita el código que ha sido enviado al correo electrónico de tu cuenta.</p>
+            <p>Su nueva contraseña es la siguiente: <span id="codigoSpan"></span>. Por favor guárdela e intente nuevamente ingresar a su perfil.</p>
           <div class="inputContainer">
             <input type="text" class="input" placeholder="a">
             <label for="" class="label">Código</label>
           </div>
           
-          <input  href="../registros/codigo.html" type="submit" class="submitBtn" value="Enviar Código">
+          <input  href="../registros/codigo.html" type="submit" class="submitBtn" value="Inicio de Sesion">
           <a class="link"  href="../index.html"> Siguiente pag</a>
         </form>
       </div>
+
+    <script>
+    // Obtener la contraseña generada desde la base de datos
+    var generatedPassword = "password"; // Reemplaza "tu_contraseña" con el valor real obtenido desde la base de datos
+      // Obtener la contraseña generada de la respuesta
+      var generatedPassword = data.password;
+    // Asignar la contraseña al elemento HTML correspondiente
+    var codigoSpan = document.getElementById("codigoSpan");
+    codigoSpan.textContent = generatedPassword;
+    </script>
 </body>
 </html>
+Ahora, la contraseña generada se mostrará en el párrafo correspondiente del segundo formulario.
+
+
+
+
+
+

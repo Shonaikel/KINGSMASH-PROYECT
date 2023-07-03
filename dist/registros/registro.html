@@ -10,34 +10,84 @@
 <body>
   <div class="fondo">
     <div class="signupFrm">
-        <form action="" class="form">
+        <form action="http://interactivas3.test/api/users/register" class="form" method="POST" id="registrationForm">
           <h1 class="title">Crea una cuenta</h1>
     
           <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
+            <input type="text" class="input" placeholder="a" name="name">
+            <label for="" class="label">Nombre</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a" name="last_name">
+            <label for="" class="label">Apellido</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a" name="country">
+            <label for="" class="label">Pais</label>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a" name="email">
             <label for="" class="label">Correo Electronico</label>
           </div>
-    
+
           <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Nombre de Usuario</label>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
+            <input type="password" class="input" placeholder="a" name="password">
             <label for="" class="label">Contraseña</label>
           </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
-            <label for="" class="label">Confirmar Contraseña</label>
-          </div>
-          <p class="subtitle">Ya tienes una cuenta?<a class="link" href="../registros/inicio.html"> Entra aquí!</a></p>
+
+          <p class="subtitle" id="registrationMessage"></p>
+
+          <p class="subtitle">Ya tienes una cuenta? <a class="link" href="../registros/inicio.html">Entra aquí!</a></p>
         
-          <input type="submit" class="submitBtn" value="registrarse">
+          <input type="submit" class="submitBtn" value="Registrarse">
         </form>
       </div>
     </div> 
-      
+
+<script>
+  document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    // Obtener los datos del formulario
+    var formData = new FormData(this);
+    
+    // Validar los campos requeridos
+    var name = formData.get("name");
+    var last_name = formData.get("last_name");
+    var email = formData.get("email");
+    var password = formData.get("password");
+  
+    if (!name || !last_name || !email || !password) {
+      // Mostrar mensaje de error si faltan campos requeridos
+      document.getElementById("registrationMessage").textContent = "Por favor, completa todos los campos.";
+      return;
+    }
+  
+    // Realizar la solicitud HTTP POST para registrar al usuario
+    fetch("http://interactivas3.test/api/users/register", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        // Usuario registrado correctamente, redirigir a la página de perfil
+        window.location.href = "./inicio.html";
+      } else if (response.status === 409) {
+        // Usuario ya registrado
+        document.getElementById("registrationMessage").textContent = "¡Ya estás registrado! Haz clic en el botón de inicio de sesión.";
+      } else {
+        // Error en la solicitud
+        document.getElementById("registrationMessage").textContent = "Hubo un error en el registro. Inténtalo de nuevo más tarde.";
+      }
+    })
+    .catch(error => {
+      console.error("Error en la solicitud:", error);
+      document.getElementById("registrationMessage").textContent = "Hubo un error en el registro. Inténtalo de nuevo más tarde.";
+    });
+  });
+</script>
 </body>
 </html>

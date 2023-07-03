@@ -9,16 +9,16 @@
 </head>
 <body>
     <div class="signupFrm">
-        <form action="" class="form">
+        <form id="loginForm" class="form">
           <h1 class="title">Iniciar Sesión</h1>
     
           <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
+            <input type="text" class="input" placeholder="a" name="email">
             <label for="" class="label">Correo Electronico</label>
           </div>
     
           <div class="inputContainer">
-            <input type="text" class="input" placeholder="a">
+            <input type="password" class="input" placeholder="a" name="password">
             <label for="" class="label">Contraseña</label>
           </div>
 
@@ -26,7 +26,47 @@
           <a class="link" href="../registros/contraseña.html">¿Olvidaste tu contraseña?</a>
     
           <input type="submit" class="submitBtn" value="Ingresar">
+          <p id="errorMessage" class="error"></p>
         </form>
-      </div>
+    </div>
+
+    <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Obtener los datos del formulario
+      var formData = new FormData(this);
+      var email = formData.get("email");
+      var password = formData.get("password");
+
+      // Validar que se hayan ingresado los datos
+      if (!email || !password) {
+        document.getElementById("errorMessage").textContent = "Ingresa tu email y contraseña.";
+        return;
+      }
+
+      // Realizar la solicitud HTTP POST para iniciar sesión
+      fetch("http://interactivas3.test/api/users/login", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Inicio de sesión exitoso, redirigir a la página deseada
+          window.location.href = "../perfil.html";
+        } else if (response.status === 401) {
+          // Credenciales de inicio de sesión inválidas
+          document.getElementById("errorMessage").textContent = "Comprueba tu email y contraseña de cuenta e inténtalo de nuevo.";
+        } else {
+          // Error en la solicitud
+          document.getElementById("errorMessage").textContent = "Hubo un error en el inicio de sesión. Inténtalo de nuevo más tarde.";
+        }
+      })
+      .catch(error => {
+        console.error("Error en la solicitud:", error);
+        document.getElementById("errorMessage").textContent = "Hubo un error en el inicio de sesión. Inténtalo de nuevo más tarde.";
+      });
+    });
+    </script>
 </body>
 </html>

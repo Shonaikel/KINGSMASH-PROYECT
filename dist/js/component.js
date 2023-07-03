@@ -21,67 +21,68 @@ const app = Vue.createApp({
  //---------------------------------------------------------------------- 
     axios({      
      method: 'get',
-     url: 'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
+     url: 'http://interactivas3.test/api/recipes/categories'
     })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
                     items.forEach((element, index) => {
-                        this.categories.push({id:index, name: element.strCategory});
+                        this.categories.push({id:index, name: element.category});
                     });
                 }
             )
             .catch(error => console.log(error));
-   //axios que trae las 10 mejores recetas
+
+   //TOP 10 MEJORES RECETAS
     axios({      
      method: 'get',
-    url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+    url: 'http://interactivas3.test/api/recipes/top10'
+    
     })
         .then(
             (response) => {
-                let items = response.data.meals;
+                let items = response.data;
             
                 this.bestrecipes=[];
 
                  items.slice(0,10).forEach( element => {
                     this.bestrecipes.push({
-                        id:element.idMeal,
-                        image: element.strMealThumb,
-                        name: element.strMeal,
-                        category: "category",
+                        id:element.id,
+                        image: 'http://localhost/interactivas3/public/storage/imgs/'+element.image,
+                        name: element.name,
+                        category: element.category,
                         time: "20 min",
-                        level: "Easy",
-                        likes: 15,
+                        level: element.level,
+                        likes: element.likes,
                         ingredients: "NA",
-                        instructions: "NA"
+                        instructions: element.description
                     });
                  });
                 }
             )
             .catch(error => console.log(error)); 
-            //quarryselector del id imput.value
- //---------------------------------------------------------------------- 
+
+   //RECETAS GENERAL
     axios({
      method: 'get',
-     url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+     url: 'http://interactivas3.test/api/recipes/all'
     })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
 
                     this.recipes = []; // limpia arrray
                         // gif loading//if (items.length > 0) this.loading = false;
-                    items.forEach( element => {
+                    items.slice(0,10).forEach( element => {
                         this.recipes.push({
-                            id: element.idMeal,
-                            image: element.strMealThumb,
-                            name: element.strMeal,
-                            category: "Seafood",
+                            image: 'http://localhost/interactivas3/public/storage/imgs/'+element.image,
+                            name: element.name,
+                            category: element.category,
                             time: "20 min",
-                            level: "Easy",
-                            likes: 15,
+                            level: element.level,
+                            likes: element.likes,
                             ingredients: "NA",
-                            instructions: "NA"
+                            instructions: element.description
                         });
                     });
                 }
@@ -101,22 +102,22 @@ const app = Vue.createApp({
             console.log("RECIPE ID ->" + index);
                 axios({
                 method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='+index
+                url: 'http://localhost/interactivas3/public/api/recipes/recipe/'+index
                 })
                         .then(
                             (response) => {
-                
-                                let item = response.data.meals;
-                                console.log(item);
+                                console.log(response);
+                                let item = response.data[0][0];
                                 
-                                this.recipe.id = item[0].idMeal;
-                                this.recipe.image = item[0].strMealThumb;
-                                this.recipe.name = item[0].strMeal;
-                                this.recipe.category = item[0].strCategory;
-                                this.recipe.time = "20 min";
-                                this.recipe.level = "Easy";
-                                this.recipe.likes = 5;
-                                this.recipe.instructions = item[0].strInstructions;
+                                
+                                this.recipe.id = index;
+                                this.recipe.image = 'http://localhost/interactivas3/public/storage/imgs/'+ item.image;
+                                this.recipe.name = item.name;
+                                this.recipe.category = item.category;
+                                this.recipe.totaltime = item.total_time +"min";
+                                this.recipe.level = item.level;
+                                this.recipe.likes = item.likes;
+                                this.recipe.description = item.description;
 
                                 let ingredientsList = "";
                                 for (let i = 1; i <= 20; i++) {
@@ -148,21 +149,21 @@ const app = Vue.createApp({
                                 onClickSelectedCategory(category) {         
                                     axios({
                                         method: 'get',
-                                        url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+category
+                                        url: 'http://interactivas3.test/api/recipes/'+category
                                     })
                                         .then(
                                             (response) => {
-                                                let items = response.data.meals;
+                                                let items = response.data;
                                                 this.recipes = [];
                                                 items.forEach( element => {
                                                     this.recipes.push({
-                                                        id: element.idMeal,
-                                                        image: element.strMealThumb,
-                                                        name: element.strMeal,
-                                                        category: category,
+                                                        id: element.id,
+                                                        image: element.image,
+                                                        name: element.name,
+                                                        category: categories,
                                                         time: "20 min",
-                                                        level: "Easy",
-                                                        likes: 15,
+                                                        level: element.level,
+                                                        likes: element.likes,
                                                         ingredients: "NA",
                                                         instructions: "NA"
                                                     });
